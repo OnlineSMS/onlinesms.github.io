@@ -2,7 +2,32 @@
 <html>
   <head>
     <style>
-      .notification a span { 
+      * { box-sizing: border-box; }
+
+.notification {
+   position   : relative;
+   overflow   : hidden;
+   font-weight: 200;
+   font-size  : 1.5rem;
+   margin-top : 40px;
+   border     : 1px #f3f3f3 solid;
+}
+
+.notification a {
+    display            : block;
+    width              : 100%;
+    background         : #00AEEF linear-gradient(to right, #fff, #fff);
+    background-position: 50% 0;
+    background-repeat  : no-repeat;
+    /* 101% seems to prevent a small imperfection on Chrome/Android 4.4.4 */
+    background-size    : 101% 101%;
+    font               : inherit;
+    color              : transparent; 
+    padding            : 1em 3em 1em 2.25em;
+    text-decoration    : none;    
+}
+
+.notification a span { 
     position         : absolute; 
     top              : 50%; 
     left             : 50%;
@@ -14,38 +39,6 @@
 }
 
 .notification a:after {
-   position    : absolute;
-   content     : "\3009";
-   right       : 1em;
-   top         : 50%;
-   transform   : translateY(-50%);  
-   font-weight : bold;
-}
-
-
-
-:checked ~ .notification a {  
-  transition: background-size .33s, 
-              transform .66s 5s, 
-              color .33s 1s;
-  
-  background-size : 0 100%; 
-  transform       : translateY(100%);
-  color           : #fff;
-}
-
-:checked ~ .notification span {
-  animation: pulse-at .66s ease-in-out .5s forwards;
-}
-
-
-@keyframes pulse-at {
-  0% { transform: translate(-50%, -50%) scale(0);}
-  20% { transform: translate(-50%, -50%) scale(1.1); }
-  25% { transform: translate(-50%, -50%) scale(1); }
-  40% { transform: translate(-50%, -50%); left:50% }
-  100% { transform: translate(0, -50%); left: 1em; }
-}
     </style>
   </head>
   <body>

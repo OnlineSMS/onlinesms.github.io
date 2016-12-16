@@ -27,7 +27,7 @@
     text-decoration    : none;    
 }
 
-.notification a span { 
+.notification a #span { 
     position         : absolute; 
     top              : 50%; 
     left             : 50%;
@@ -59,7 +59,7 @@
   color           : #fff;
 }
 
-:checked ~ .notification span {
+:checked ~ .notification #span {
   animation: pulse-at .66s ease-in-out .5s forwards;
 }
 
@@ -99,7 +99,7 @@ pre { background: #f3f3f3; border: 1px dashed #d8d8d8;
 <label for="n">Notification<br /></label>
 
 <div class="notification">
-  <a href="#"><span>Welcome</span><pre>        </pre>Dudterthefirst</a>
+  <a href="#"><span id="span">Welcome</span><span style="color:#fff;">Welcome</span>Dudterthefirst</a>
 </div>
 
 

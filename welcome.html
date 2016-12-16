@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .notification a span { 
+    position         : absolute; 
+    top              : 50%; 
+    left             : 50%;
+    transform        : translate(-50%, -50%) scale(0);
+    transform-origin : 50% 50%;
+    font-weight      : bold;
+    font-size        : inherit;
+    color            : #fff; 
+}
 
+.notification a:after {
+   position    : absolute;
+   content     : "\3009";
+   right       : 1em;
+   top         : 50%;
+   transform   : translateY(-50%);  
+   font-weight : bold;
+}
+
+
+
+:checked ~ .notification a {  
+  transition: background-size .33s, 
+              transform .66s 5s, 
+              color .33s 1s;
+  
+  background-size : 0 100%; 
+  transform       : translateY(100%);
+  color           : #fff;
+}
+
+:checked ~ .notification span {
+  animation: pulse-at .66s ease-in-out .5s forwards;
+}
+
+
+@keyframes pulse-at {
+  0% { transform: translate(-50%, -50%) scale(0);}
+  20% { transform: translate(-50%, -50%) scale(1.1); }
+  25% { transform: translate(-50%, -50%) scale(1); }
+  40% { transform: translate(-50%, -50%); left:50% }
+  100% { transform: translate(0, -50%); left: 1em; }
+}
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" id="n">
+<label for="n">Notification<br /></label>
+
+<div class="notification">
+  <a href="#"><span>@</span>fcalderan mentioned you</a>
+</div>
+
+
+
+
+
+
+
+<p>
+  (the notification will slide down after 
+  5 seconds)<br /><a href="http://stackoverflow.com/a/35728823/1098851">Related discussion on Stackoverflow</a></p>
+
+
+
+
+<h2>Markup</h2>
+<pre><code>&lt;div class="notification"&gt;
+    &lt;a href="#"&gt;&lt;span&gt;@&lt;/span>fcalderan mentioned you&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+
+
+  </body>
+</html>

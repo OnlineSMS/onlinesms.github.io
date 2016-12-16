@@ -1,7 +1,7 @@
 {
   "serverIp":"dusterthefirst.ddns.net",
   "serverPort":"69",
-  "authkey":"6942069",
+  "authKey":"6942069",
   "logFile":"/logs/current.txt",
   "versionInfo":{
     "version":"[ALPHA]0.0.0",

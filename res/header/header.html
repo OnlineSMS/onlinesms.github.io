@@ -1,0 +1,26 @@
+<link rel="stylesheet" type="text/css" href="/res/header/header.css">
+<div class="desktop">
+    <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/chat.html">Chat</a></li>
+        <li><a href="/tutorials/index.html">Tutorials</a></li>
+        <li><a href="/tutorials/help.html">Help</a></li>
+    </ul>
+</div>
+<div class="mobile">
+    <div id="menu">
+        <div id="drpbtn" onclick="openMenu()">&#9776;</div>
+        <a id="help" href="/tutorials/help.html">Help</a>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/chat.html">Chat</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/tutorials/help.html">Help</a></li>
+        </ul>
+    </div>
+</div>
+<script>
+    function openMenu(){
+        $("#menu ul").toggleClass("open");
+    }
+</script>

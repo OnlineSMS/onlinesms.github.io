@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="res/styles/notif.css" rel="stylesheet" type="text/css">
+      <script src="JQuery/jquery-3.1.1.js"></script>
+      
+      <title>The Project</title>
+      <link href="res/media/favicon.png" rel="icon" type="image/png">
+      <link href="res/styles/index.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+      <div id="header"></div>
+      <div id="headerspacer" class="desktop">&nbsp;</div>
+      <div id="headerspacer" class="mobile">&nbsp;</div>
+      <script src="res/header/header.js"></script>
+      
+      <input type="checkbox" id="notif">
+      <button onclick="Notify('jeff','died', 'yesterday');">NotifyMe</button>
+      
+      <div class="notification">
+          <a href="#"><span id="span">@</span><name>Unknown</name> <action>Completed An Action</action></a>
+      </div>
+      <script src="res/scripts/notify.js"></script>
+  </body>
+</html>

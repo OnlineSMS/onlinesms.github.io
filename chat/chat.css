@@ -1,0 +1,111 @@
+body{
+    margin: 0;
+    overflow: hidden
+}
+
+#chat{
+    position: relative;
+    font-family: "Courier New";
+    display: block;
+    background-color: darkgray;
+    margin: 0px;
+    padding: 5px;
+    border-radius: 0px;
+    height: 95vh;
+    overflow: auto;
+}
+
+input#timestamps{ display: none }
+label {
+  display: inline-block;
+  text-align: center;
+  border:1px #d8d8d8 solid;
+  padding: .5em 2em;
+  cursor: pointer;
+  background: #f2f2f2;
+}
+label:after { content: "On"}
+:checked ~ label:after { content: "Off"}
+
+/*COLORS*/
+
+/*Dark Red*/
+.amp4{
+    color: rgb(170,0,0);
+}
+/*Red*/
+.ampc{
+    color: rgb(255,85,85);
+}
+/*Gold*/
+.amp6{
+    color: rgb(255,170,0);
+}
+/*Yellow*/
+.ampe{
+    color: rgb(255,255,85);
+}
+/*Dark Green*/
+.amp2{
+    color: rgb(0,170,0);
+}
+/*Green*/
+.ampa{
+    color: rgb(85,255,85);
+}
+/*Aqua*/
+.ampb{
+    color: rgb(85,255,255);
+}
+/*Dark Aqua*/
+.amp3{
+    color: rgb(0,170,170);
+}
+/*Blue*/
+.amp1{
+    color: rgb(85,85,255);
+}
+/*Dark Blue*/
+.amp9{
+    color: rgb(0,0,170);
+}
+/*Light Purple*/
+.ampd{
+    color: rgb(255,85,255);
+}
+/*Dark Purple*/
+.amp5{
+    color: rgb(170,0,170);
+}
+/*White*/
+.ampf{
+    color: rgb(255,255,255);
+}
+/*Gray*/
+.amp7{
+    color: rgb(170,170,170);
+}
+/*Dark Gray*/
+.amp8{
+    color: rgb(85,85,85);
+}
+/*Black*/
+.amp0{
+    color: rgb(0,0,0);
+}
+/*BOLD*/
+.ampl{
+    font-weight: bold;
+}
+/*italics*/
+.ampo{
+    font-style: italic;
+}
+/*Underlined*/
+.ampn{
+    text-decoration: underline;
+}
+/*Stroked*/
+.ampm{
+    text-decoration: line-through;
+}

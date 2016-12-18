@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hello</title>
+        <link href="/chat/chat.css" rel="stylesheet" type="text/css">
+        <script src="/JQuery/jquery-3.1.1.js"></script>
+    </head>
+    <body>
+<!--        Timestamps-->
+        <input type="checkbox" id="timestamps">
+        <label for="timestamps">Timestamps:</label>
+<!--        Name Color Chooser-->
+        <select id="nameColor" onchange="getval()">
+            <optgroup label="Light Colors" class="amp0">
+                <option label="Light Purple" class="ampd">ampd</option>
+                <option label="Gray" class="amp7">amp7</option>
+                <option label="White" class="ampf">ampf</option>
+            </optgroup>
+            <optgroup label="Dark Colors" class="amp0">
+                <option label="Black" class="amp0">amp0</option>
+                <option label="Dark Blue" class="amp1">amp1</option>
+                <option label="Dark Green" class="amp2">amp2</option>
+                <option label="Dark Aqua" class="amp3">amp3</option>
+                <option label="Dark Red" class="amp4">amp4</option>
+                <option label="Dark Purple" class="amp5">amp5</option>
+                <option label="Dark Gray" selected="selected" class="amp8">amp8</option>
+            </optgroup>
+            <optgroup label="Colorful Colors" class="amp0">
+                <option label="Gold" class="amp6">amp6</option>
+                <option label="Blue" class="amp9">amp9</option>
+                <option label="Green" class="ampa">ampa</option>
+                <option label="Aqua" class="ampb">ampb</option>
+                <option label="Red" class="ampc">ampc</option>
+                <option label="Yellow" class="ampe">ampe</option>
+            </optgroup>
+        </select>
+<!--        Name Chooser-->
+        <span id="nameDisp">User</span>
+<!--        Message Box-->
+        <textarea id="message" placeholder="Send A Message"></textarea>
+<!--        Send-->
+        <button id="send" onclick="Notify('jeff','died', 'yesterday');">Send</button>
+        <script>
+            getval();
+            function getval(){
+                $("#nameColor").removeClass();
+                $("#nameDisp").removeClass();
+                $("#nameColor").addClass($("#nameColor").val());
+                $("#nameDisp").addClass($("#nameColor").val());
+            }
+        </script>
+    </body>
+</html>

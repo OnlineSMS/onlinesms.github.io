@@ -24,88 +24,88 @@ label {
   cursor: pointer;
   background: #f2f2f2;
 }
-label:after { content: "On"}
-:checked ~ label:after { content: "Off"}
+fortimestamps:after { content: "On"}
+timestamps:checked ~ fortimestamps:after { content: "Off"}
 
 /*COLORS*/
 
 /*Dark Red*/
-.amp4{
+.Dark_Red{
     color: rgb(170,0,0);
 }
 /*Red*/
-.ampc{
+.Red{
     color: rgb(255,85,85);
 }
 /*Gold*/
-.amp6{
+.Gold{
     color: rgb(255,170,0);
 }
 /*Yellow*/
-.ampe{
+.Yellow{
     color: rgb(255,255,85);
 }
 /*Dark Green*/
-.amp2{
+.Dark_Green{
     color: rgb(0,170,0);
 }
 /*Green*/
-.ampa{
+.Green{
     color: rgb(85,255,85);
 }
 /*Aqua*/
-.ampb{
+.Aqua{
     color: rgb(85,255,255);
 }
 /*Dark Aqua*/
-.amp3{
+.Dark_Aqua{
     color: rgb(0,170,170);
 }
 /*Blue*/
-.amp1{
+.Blue{
     color: rgb(85,85,255);
 }
 /*Dark Blue*/
-.amp9{
+.Dark_Blue{
     color: rgb(0,0,170);
 }
 /*Light Purple*/
-.ampd{
+.Light_Purple{
     color: rgb(255,85,255);
 }
 /*Dark Purple*/
-.amp5{
+.Dark_Purple{
     color: rgb(170,0,170);
 }
 /*White*/
-.ampf{
+.White{
     color: rgb(255,255,255);
 }
 /*Gray*/
-.amp7{
+.Gray{
     color: rgb(170,170,170);
 }
 /*Dark Gray*/
-.amp8{
+.Dark_Gray{
     color: rgb(85,85,85);
 }
 /*Black*/
-.amp0{
+.Black{
     color: rgb(0,0,0);
 }
 /*BOLD*/
-.ampl{
+.Bold{
     font-weight: bold;
 }
 /*italics*/
-.ampo{
+.Italics{
     font-style: italic;
 }
 /*Underlined*/
-.ampn{
+.Underline{
     text-decoration: underline;
 }
 /*Stroked*/
-.ampm{
+.Strike{
     text-decoration: line-through;
 }

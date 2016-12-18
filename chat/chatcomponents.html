@@ -5,50 +5,69 @@
         <title>Hello</title>
         <link href="/chat/chat.css" rel="stylesheet" type="text/css">
         <script src="/JQuery/jquery-3.1.1.js"></script>
+        <link rel="stylesheet" href="/res/modal/modal.css">
     </head>
     <body>
-<!--        Timestamps-->
-        <input type="checkbox" id="timestamps">
-        <label for="timestamps">Timestamps:</label>
-<!--        Name Color Chooser-->
-        <select id="nameColor" onchange="getval()">
-            <optgroup label="Light Colors" class="amp0">
-                <option label="Light Purple" class="ampd">ampd</option>
-                <option label="Gray" class="amp7">amp7</option>
-                <option label="White" class="ampf">ampf</option>
-            </optgroup>
-            <optgroup label="Dark Colors" class="amp0">
-                <option label="Black" class="amp0">amp0</option>
-                <option label="Dark Blue" class="amp1">amp1</option>
-                <option label="Dark Green" class="amp2">amp2</option>
-                <option label="Dark Aqua" class="amp3">amp3</option>
-                <option label="Dark Red" class="amp4">amp4</option>
-                <option label="Dark Purple" class="amp5">amp5</option>
-                <option label="Dark Gray" selected="selected" class="amp8">amp8</option>
-            </optgroup>
-            <optgroup label="Colorful Colors" class="amp0">
-                <option label="Gold" class="amp6">amp6</option>
-                <option label="Blue" class="amp9">amp9</option>
-                <option label="Green" class="ampa">ampa</option>
-                <option label="Aqua" class="ampb">ampb</option>
-                <option label="Red" class="ampc">ampc</option>
-                <option label="Yellow" class="ampe">ampe</option>
-            </optgroup>
-        </select>
-<!--        Name Chooser-->
-        <span id="nameDisp">User</span>
-<!--        Message Box-->
         <textarea id="message" placeholder="Send A Message"></textarea>
 <!--        Send-->
         <button id="send" onclick="Notify('jeff','died', 'yesterday');">Send</button>
-        <script>
-            getval();
-            function getval(){
-                $("#nameColor").removeClass();
-                $("#nameDisp").removeClass();
-                $("#nameColor").addClass($("#nameColor").val());
-                $("#nameDisp").addClass($("#nameColor").val());
-            }
-        </script>
+        
+        <script src="chat.js"></script>
+        
+        <button id="settings">Settings</button>
+
+        <!-- The Modal -->
+        <div id="settingsModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+              <h2>Settings</h2>
+            </div>
+            <div class="modal-body">
+              <!--        Timestamps-->
+                <input type="checkbox" id="timestamps">
+                <label for="timestamps" id="fortimestamps">Timestamps:</label><br>
+        <!--        Name Chooser-->
+                Username:<input type="text" id="nameDisp" value="User"><br>
+                Color:
+        <!--        Name Color Chooser-->
+                <select id="nameColor" onchange="getval()">
+                    <optgroup label="Light Colors" class="Black">
+                        <option label="Light Purple" class="ampd">ampd</option>
+                        <option label="Gray" class="Gray">Gray</option>
+                        <option label="White" class="White">White</option>
+                    </optgroup>
+                    <optgroup label="Dark Colors" class="Black">
+                        <option label="Black" class="Black">Black</option>
+                        <option label="Dark Blue" class="Dark_Blue">Dark_Blue</option>
+                        <option label="Dark Green" class="Dark_Green">Dark_Green</option>
+                        <option label="Dark Aqua" class="Dark_Aqua">Dark_Aqua</option>
+                        <option label="Dark Red" class="Dark_Red">Dark_Red</option>
+                        <option label="Dark Purple" class="Dark_Purple">Dark_Purple</option>
+                        <option label="Dark Gray" selected="selected" class="Dark_Gray">Dark_Gray</option>
+                    </optgroup>
+                    <optgroup label="Colorful Colors" class="Black">
+                        <option label="Gold" class="Gold">Gold</option>
+                        <option label="Blue" class="Blue">Blue</option>
+                        <option label="Green" class="Green">Green</option>
+                        <option label="Aqua" class="Aqua">Aqua</option>
+                        <option label="Red" class="Red">Red</option>
+                        <option label="Yellow" class="Yellow">Yellow</option>
+                    </optgroup>
+    </select><br>
+<!--                Server-->
+                Connected Server:<input type="text" id="server" value="localhost"><br>
+                <input type="checkbox" id="night">
+                <label for="night" id="fornight">Night Mode:</label><br>
+            </div>
+            <div class="modal-footer">
+              <a href="/tutorials/help.html">Help</a>
+            </div>
+          </div>
+        </div>
+
+        <script src="/res/modal/modal.js"></script>
     </body>
 </html>

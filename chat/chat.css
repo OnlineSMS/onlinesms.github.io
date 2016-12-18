@@ -24,8 +24,8 @@ label {
   cursor: pointer;
   background: #f2f2f2;
 }
-fortimestamps:after { content: "On"}
-timestamps:checked + fortimestamps:after { content: "Off"}
+#fortimestamps:after { content: "On"}
+#timestamps:checked + #fortimestamps:after { content: "Off"}
 
 /*COLORS*/
 

@@ -15,7 +15,7 @@ body{
     overflow: auto;
 }
 
-input#timestamps{ display: none }
+input#timestamps, input#night{ display: none }
 label {
   display: inline-block;
   text-align: center;
@@ -28,7 +28,7 @@ label {
 #timestamps:checked ~ #fortimestamps:after { content: "Off"}
 
 #fornight:after { content: "On"}
-#night:checked ~ #night:after { content: "Off"}
+#night:checked ~ #fornight:after { content: "Off"}
 
 
 /*COLORS*/

@@ -1,5 +1,8 @@
 //Name Display
-getval();
+document.addEventListener('DOMContentLoaded', function () {
+  getval();
+});
+
 function getval(){
     $("#nameColor").removeClass();
     $("#nameDisp").removeClass();

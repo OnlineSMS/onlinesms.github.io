@@ -1,5 +1,4 @@
 function Notify(name, action, timestamp){
-    alert(name +""+ !$("#notif").is(":checked"));
     if(!$("#notif").is(":checked")){
         try {
          DesktopNotify("@" + name + " " + action, "/res/media/favicon.png", "In Your Chatroom, @" + name + " " + action, timestamp);

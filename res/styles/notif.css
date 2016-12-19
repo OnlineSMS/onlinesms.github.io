@@ -51,11 +51,11 @@
    font-weight : bold;
 }
 
-:checked ~ .notification{
+#notif:checked ~ .notification{
     height : auto;
 }
 
-:checked ~ .notification a {
+#notif:checked ~ .notification a {
   transition      : background-size .33s, 
                     transform .66s 5s, 
                     color .33s 1s;
@@ -65,7 +65,7 @@
   color           : #fff;
 }
 
-:checked ~ .notification span {
+#notif:checked ~ .notification span {
   animation: pulse-at .66s ease-in-out .5s forwards;
 }
 

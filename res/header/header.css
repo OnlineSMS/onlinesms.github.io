@@ -79,6 +79,7 @@
     overflow: hidden;
     box-shadow: none;
     transition: height 2s, box-shadow 2s;
+    z-index: 1000;
 }
 #header .mobile #menu ul.open{
     display: block;

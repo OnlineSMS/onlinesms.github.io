@@ -10,7 +10,6 @@ body{
     border-style: none none solid none;
 }
 
-
 #chat{
     position: relative;
     font-family: "Courier New";
@@ -20,7 +19,7 @@ body{
     border-radius: 0px;
     height: 80vh;
     overflow: auto;
-    z-index: 0;
+    z-index: 1;
 }
 
 #settings, #online{
@@ -57,7 +56,7 @@ body{
 #message{
     resize: none;
     width: 90vw;
-    height: 85%;
+    height: 100%;
     padding: 5px 5px;
 }
 
@@ -79,6 +78,7 @@ input, select{
 
 /*HR*/
 hr{
+    margin: 2px;
     width: 80%;
     border-color: rgb(170,170,170);
     border-radius: 100px;

@@ -7,6 +7,23 @@
       
       <title>The Project</title>
       <link href="res/media/favicon.png" rel="icon" type="image/png">
+      <style>
+          body{
+              margin: 0;
+          }
+          #chat{
+              position: fixed;
+              top: 3em;
+              bottom: 0px;
+              left: 0px;
+              right: 0px;
+          }
+          #fram{
+              border: none;
+              height: 100%;
+              width: 100%;
+          }
+      </style>
   </head>
   <body>
       <input type="checkbox" id="notif">
@@ -18,9 +35,11 @@
       <div class="notification">
           <a href="#"><span id="span">@</span><name>Unknown</name> <action>Completed An Unknown Action</action></a>
       </div>
-    
       <script src="res/scripts/notify.js"></script>
     
-      <button id="send" onclick="Notify('jeff','died', 'yesterday');">Send</button>
+<!--      <button id="send" onclick="Notify('jeff','died', 'yesterday');">Send</button>-->
+      <div id="chat">
+        <iframe src="chat/chatcomponents.html" id="fram"></iframe>
+      </div>
   </body>
 </html>

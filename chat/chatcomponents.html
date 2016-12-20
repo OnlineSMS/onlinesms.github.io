@@ -8,13 +8,25 @@
         <link rel="stylesheet" href="/res/modal/modal.css">
     </head>
     <body>
-        <textarea id="message" placeholder="Send A Message"></textarea>
-<!--        Send-->
-        <button id="send" onclick="Notify('jeff','died', 'yesterday');">Send</button>
+        <div id="chat">
+            No Connection<br>Read Tutorials On How To Setup Or Connect To A Server On The Tutorials Page
+        </div>
+        <hr id="thin">
+        <div id="top">
+            <textarea id="message" placeholder="Send A Message"></textarea>
+        </div>
+        <div id="bottom">
+            <span id="left">
+                <button id="settings">Settings</button>
+                <button id="online">Online</button>
+            </span>
+            <span id="right">
+                <button id="send" onclick="Notify('jeff','died', 'yesterday');">Send</button>
+            </span>
+        </div>
+        
         
         <script src="chat.js"></script>
-        
-        <button id="settings">Settings</button>
 
         <!-- The Modal -->
         <div id="settingsModal" class="modal">
@@ -26,13 +38,10 @@
               <h2>Settings</h2>
             </div>
             <div class="modal-body">
-              <!--        Timestamps-->
-                <input type="checkbox" id="timestamps">
-                <label for="timestamps" id="fortimestamps">Timestamps:</label><br>
-        <!--        Name Chooser-->
+<!--                Name Chooser-->
                 Username:<input type="text" id="nameDisp" value="User"><br>
                 Color:
-        <!--        Name Color Chooser-->
+<!--              Name Color Chooser-->
                 <select id="nameColor" onchange="getval()">
                     <optgroup label="Light Colors" class="Black">
                         <option label="Light Purple" class="Light_Purple">Light_Purple</option>
@@ -58,9 +67,33 @@
                     </optgroup>
     </select><br>
 <!--                Server-->
-                Connected Server:<input type="text" id="server" value="localhost"><input type="number" id="ip" value="420"><br>
+                Connected Server:<input type="text" id="server" value="localhost">:<input type="number" id="ip" value="4269" max="65535" min="0">
+                <span id="ping">Server Ping: 0ms</span><br><status class="good"></status>
+                <br>
+                <button id="checkStatus">Check Server Status</button>
+                <hr>
+<!--                Timestamps-->
+                <input type="checkbox" id="timestamps">
+                <label for="timestamps" id="fortimestamps">Timestamps:</label>
+<!--                Night Mode-->
                 <input type="checkbox" id="night">
-                <label for="night" id="fornight">Night Mode:</label><br>
+                <label for="night" id="fornight">Night Mode:</label>
+            </div>
+            <div class="modal-footer">
+              <a href="/tutorials/help.html">Help</a>
+            </div>
+          </div>
+        </div>
+        <div id="peopleModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+              <h2>Online Users</h2>
+            </div>
+            <div class="modal-body">
+                <div id="onlines"></div>
             </div>
             <div class="modal-footer">
               <a href="/tutorials/help.html">Help</a>

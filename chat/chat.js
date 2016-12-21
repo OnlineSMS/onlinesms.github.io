@@ -46,6 +46,7 @@ function getval(){
 }
 
 $(function() {
+    alert("memes");
   loadCookies();
 });
 

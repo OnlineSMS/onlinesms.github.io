@@ -91,7 +91,7 @@ function loadCookies(){
     var night =  document.getCookie("night");
     var message = document.getCookie("message");
     
-    console.log("=====Loaded Cookies");
+    alert("=====Loaded Cookies");
     
     if(username != ""){
         $("#nameDisp").val(username);

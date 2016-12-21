@@ -100,11 +100,25 @@ function loadCookies(){
     console.log("night      = " + night);
     console.log("message    = " + message);
     
-    $("#nameDisp").val(username);
-    $("#nameColor").val(color);
-    $("#server").val(server);
-    $("#port").val(port);
-    document.getElementById('timestamps').checked = (timestamps === 'true');;
-    document.getElementById('night').checked = (night === 'true');;
-    $("#message").val(message);
+    if(username != ""){
+        $("#nameDisp").val(username);
+    }
+    if(color != ""){
+        $("#nameColor").val(color);
+    }
+    if(server != ""){
+         $("#server").val(server);
+    }
+    if(port != ""){
+        $("#port").val(port);
+    }
+    if(timestamps != ""){
+        document.getElementById('timestamps').checked = (timestamps === 'true');
+    }
+    if(night != ""){
+         document.getElementById('night').checked = (night === 'true');
+    }
+    if(message != ""){
+        $("#message").val(message);
+    }
 }

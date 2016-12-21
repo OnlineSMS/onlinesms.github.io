@@ -46,7 +46,6 @@ function getval(){
 }
 
 $(function() {
-    console.log("=====Loaded Cookies");
   loadCookies();
 });
 
@@ -92,33 +91,33 @@ function loadCookies(){
     var message = document.getCookie("message");
     
     console.log("=====Loaded Cookies");
-    console.log("username   = " + username);
-    console.log("color      = " + color);
-    console.log("server     = " + server);
-    console.log("port       = " + port);
-    console.log("timestamps = " + timestamps);
-    console.log("night      = " + night);
-    console.log("message    = " + message);
     
     if(username != ""){
         $("#nameDisp").val(username);
+        console.log("username   = " + username);
     }
     if(color != ""){
         $("#nameColor").val(color);
+        console.log("color      = " + color);
     }
     if(server != ""){
          $("#server").val(server);
+        console.log("server     = " + server);
     }
     if(port != ""){
         $("#port").val(port);
+        console.log("port       = " + port);
     }
     if(timestamps != ""){
         document.getElementById('timestamps').checked = (timestamps === 'true');
+        console.log("timestamps = " + timestamps);
     }
     if(night != ""){
          document.getElementById('night').checked = (night === 'true');
+        console.log("night      = " + night);
     }
     if(message != ""){
         $("#message").val(message);
+        console.log("message    = " + message);
     }
 }

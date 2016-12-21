@@ -46,7 +46,6 @@ function getval(){
 }
 
 $(function() {
-    alert("memes");
   loadCookies();
   var myVar = setInterval(saveCookies, 1000);
     getval();

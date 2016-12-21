@@ -30,9 +30,6 @@
                 <button id="send" onclick="Notify('jeff','died', 'yesterday');">Send</button>
             </span>
         </div>
-        
-        
-        <script src="chat.js"></script>
 
         <!-- The Modal -->
         <div id="settingsModal" class="modal">
@@ -73,7 +70,7 @@
                     </optgroup>
     </select><br>
 <!--                Server-->
-                Connected Server:<input type="text" id="server" value="localhost">:<input type="number" id="ip" value="4269" max="65535" min="0">
+                Connected Server:<input type="text" id="server" value="localhost">:<input type="number" id="port" value="4269" max="65535" min="0">
                 <span id="ping">Server Ping: 0ms</span><br><status class="good"></status>
                 <br>
                 <button id="checkStatus">Check Server Status</button>
@@ -108,5 +105,6 @@
         </div>
 
         <script src="/res/modal/modal.js"></script>
+        <script src="chat.js"></script>
     </body>
 </html>

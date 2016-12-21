@@ -45,27 +45,66 @@ function getval(){
     $("#nameDisp").addClass($("#nameColor").val());
 }
 
+$(function() {
+    console.log("=====Loaded Cookies");
+  loadCookies();
+});
+
+$(window).bind('beforeunload', function(){
+  saveCookies();
+});
+
 function saveCookies(){
-    var
-        username = $("#nameDisp").val(),
-        color,
-        server,
-        port,
-        timestamps,
-        nightmode,
-        message;
+    var username = $("#nameDisp").val();
+    var color = $("#nameColor").val();
+    var server = $("#server").val();
+    var port = $("#port").val();
+    var timestamps = document.getElementById('timestamps').checked;
+    var night = document.getElementById('night').checked;
+    var message = $("#message").val();
     
-    alert(username);
+    console.log("=====Saved Cookies");
+    console.log("username   = " + username);
+    console.log("color      = " + color);
+    console.log("server     = " + server);
+    console.log("port       = " + port);
+    console.log("timestamps = " + timestamps);
+    console.log("night      = " + night);
+    console.log("message    = " + message);
     
-    document.setCookie("username", "");
-    document.setCookie("color", "");
-    document.setCookie("server", "");
-    document.setCookie("port", "");
-    document.setCookie("timestamps", "");
-    document.setCookie("nightmode", "");
-    document.setCookie("message","")
+    document.setCookie("username", username);
+    document.setCookie("color", color);
+    document.setCookie("server", server);
+    document.setCookie("port", port);
+    document.setCookie("timestamps", timestamps);
+    document.setCookie("night", night);
+    document.setCookie("message", message);
 }
 
 function loadCookies(){
     
+    var username = document.getCookie("username");
+    var color =  document.getCookie("color");
+    var server = document.getCookie("server");
+    var port = document.getCookie("port");
+    var timestamps = document.getCookie("timestamps");
+    var night =  document.getCookie("night");
+    var message = document.getCookie("message");
+    
+    console.log("=====Loaded Cookies");
+    console.log("username   = " + username);
+    console.log("color      = " + color);
+    console.log("server     = " + server);
+    console.log("port       = " + port);
+    console.log("timestamps = " + timestamps);
+    console.log("night      = " + night);
+    console.log("message    = " + message);
+    
+    $("#nameDisp").val(username);
+    $("#nameColor").val(color);
+    $("#server").val(server);
+    $("#port").val(port);
+    document.getElementById('timestamps').checked = (timestamps === 'true');;
+    document.getElementById('night').checked = (night === 'true');;
+    $("#message").val(message);
 }

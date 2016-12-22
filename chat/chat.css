@@ -117,9 +117,6 @@ status::after{
 .sent{
     font-family: sans-serif;
 }
-.sent:target{
-    
-}
 
 .name:before{
     content: "@";
@@ -128,10 +125,11 @@ status::after{
     text-decoration: underline;
 }
 
-.message{
-    
-}
+.message{}
 
+.person{
+    color: dodgerblue;
+}
 .person:before{
     content: "@";
 }

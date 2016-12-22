@@ -113,6 +113,32 @@ status::after{
     background: #f2f2f2;
 }
 
+/*Chat*/
+.sent{
+    font-family: sans-serif;
+}
+.sent:target{
+    
+}
+
+.name:before{
+    content: "@";
+}
+.name:hover{
+    text-decoration: underline;
+}
+
+.message{
+    
+}
+
+.person:before{
+    content: "@";
+}
+.person:hover{
+    text-decoration: underline;
+}
+
 /*Labels*/
 label {
     display: inline-block;

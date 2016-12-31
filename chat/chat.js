@@ -55,6 +55,26 @@ $(window).bind('beforeunload', function(){
   saveCookies();
 });
 
+$("#ping").click(function(){
+    alert("ping");
+    var server = $("#server").val();
+    var port = $("#port").val();
+    
+    var ping = new Date;
+
+    $.ajax({ type: "POST",
+        url: "server.php",
+        data: {},
+        cache:false,
+        success: function(output){ 
+
+        ping = new Date - ping;
+
+    }
+            
+    alert(ping);
+});
+})
 function saveCookies(){
     var username = $("#nameDisp").val();
     var color = $("#nameColor").val();

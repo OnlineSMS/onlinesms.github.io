@@ -15,16 +15,50 @@ permalink: "/404.html"
             body{
                 margin: 0;
                 padding: 0;
+                background-color: #f3f3f3;
+            }
+            #jumbo{
+                position: relative;
+                display: block;
+                height: 40vh;
+                background: url('res/media/404.png') no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            #content{
+                background-color: #f3f3f3;
+                text-align: center;
+                margin: auto;
+                padding: 0% 0%;
+                position: absolute;
+                width: 100%;
+            }
+            #content h1{
+                font-size: 2.5em;
+                margin: 0;
+            }
+            #content h2{
+                font-size: 1.7em;
+                margin: 0;
+            }
+            #content h3{
+                font-size: 1em;
             }
         </style>
     </head>
     <body>
         <div id="headerspacer" class="desktop">&nbsp;</div>
         <div id="headerspacer" class="mobile">&nbsp;</div>
-        
-        <img src="/res/media/favicon.png" alt="Favicon">
+        <div id="content">
+            <h1>Errror 404</h1>
+            <h2>The URL "<span id="url"></span>" Does Not Exist</h2>
+            <h3>You Have Entered An invalid URL Or The Page You Are Looking For Has Been Moved</h3>
+            <script>
+                $("#url").text(window.location.href);
+            </script>
+        </div>
         
         <div id="header"></div>
-        <script src="res/header/header.js"></script>
+        <script src="/res/header/header.js"></script>
     </body>
 </html>

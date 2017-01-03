@@ -113,10 +113,18 @@ status.good::after{
 }
 
 /*NAME*/
-status::after{
+#valid::after{
     display: inline-block;
     color: rgb(85,85,85);
-    content: "Server Not Checked";
+    content: "Name Not Checked";
+}
+#valid.good::after{
+    color: rgb(0,170,0);
+    content: "Name Is Not Taken";
+}
+#valid.bad::after{
+    color: rgb(170,0,0);
+    content: "Name Taken, Choose Another";
 }
 
 #checkStatus{

@@ -55,50 +55,78 @@ $(window).bind('beforeunload', function(){
   saveCookies();
 });
 
-$("#ping").click(function(){
-    alert("ping");
-    var server = $("#server").val();
-    var port = $("#port").val();
-    
-    var ping = new Date;
+$("#checkStatus").click(function() {
+    $("status").removeClass();
+    $("status").addClass("check");
+    var urll = "http://" + $("#server").val() + ":" + $("#port").val() + "/ping";
 
-    $.ajax({ type: "POST",
-        url: "server.php",
+    var ping = new Date().getTime();
+
+    $.ajax({ type: "GET",
+        url: urll,
         data: {},
         cache:false,
+        async: true,
+        timeout: 1000,
+        error: function(){
+            ping = "TIMEOUT";
+            checked(ping);
+        },
         success: function(output){ 
-
-        ping = new Date - ping;
-
-    }
-            
-    alert(ping);
+            ping = (new Date().getTime()) - ping;
+            checked(ping);
+        }
+    });
+    
 });
-})
+
+function checked(ping){
+    if(ping == "TIMEOUT"){
+        $("#ping").text(ping);
+    }else{
+        $("#ping").text(ping + "ms");
+    }
+    
+    $("status").removeClass();
+    if(ping == "TIMEOUT"){
+        $("status").addClass("no");
+    }else if(ping > 800){
+        $("status").addClass("bad");
+    }else if(ping > 50){
+        $("status").addClass("slow");
+    }else if(ping <= 50){
+        $("status").addClass("good");
+    }
+}
+
+/***********************
+Log Or Dont Log Cookies
+***********************/
+var log = false;
+
 function saveCookies(){
     var username = $("#nameDisp").val();
     var color = $("#nameColor").val();
     var server = $("#server").val();
     var port = $("#port").val();
     var timestamps = document.getElementById('timestamps').checked;
-    var night = document.getElementById('night').checked;
     var message = $("#message").val();
     
-    console.log("=====Saved Cookies");
-    console.log("username   = " + username);
-    console.log("color      = " + color);
-    console.log("server     = " + server);
-    console.log("port       = " + port);
-    console.log("timestamps = " + timestamps);
-    console.log("night      = " + night);
-    console.log("message    = " + message);
+    if(log){
+        console.log("=====Saved Cookies");
+        console.log("username   = " + username);
+        console.log("color      = " + color);
+        console.log("server     = " + server);
+        console.log("port       = " + port);
+        console.log("timestamps = " + timestamps);
+        console.log("message    = " + message);   
+    }
     
     document.setCookie("username", username);
     document.setCookie("color", color);
     document.setCookie("server", server);
     document.setCookie("port", port);
     document.setCookie("timestamps", timestamps);
-    document.setCookie("night", night);
     document.setCookie("message", message);
 }
 
@@ -109,37 +137,34 @@ function loadCookies(){
     var server = document.getCookie("server");
     var port = document.getCookie("port");
     var timestamps = document.getCookie("timestamps");
-    var night =  document.getCookie("night");
     var message = document.getCookie("message");
     
-    console.log("=====Loaded Cookies");
+    if(log){
+        console.log("=====Loaded Cookies");
+        if(username != ""){
+            $("#nameDisp").val(username);
+            console.log("username   = " + username);
+        }
+        if(color != ""){
+            $("#nameColor").val(color);
+            console.log("color      = " + color);
+        }
+        if(server != ""){
+             $("#server").val(server);
+            console.log("server     = " + server);
+        }
+        if(port != ""){
+            $("#port").val(port);
+            console.log("port       = " + port);
+        }
+        if(timestamps != ""){
+            document.getElementById('timestamps').checked = (timestamps === 'true');
+            console.log("timestamps = " + timestamps);
+        }
+        if(message != ""){
+            $("#message").val(message);
+            console.log("message    = " + message);
+        }
+    }
     
-    if(username != ""){
-        $("#nameDisp").val(username);
-        console.log("username   = " + username);
-    }
-    if(color != ""){
-        $("#nameColor").val(color);
-        console.log("color      = " + color);
-    }
-    if(server != ""){
-         $("#server").val(server);
-        console.log("server     = " + server);
-    }
-    if(port != ""){
-        $("#port").val(port);
-        console.log("port       = " + port);
-    }
-    if(timestamps != ""){
-        document.getElementById('timestamps').checked = (timestamps === 'true');
-        console.log("timestamps = " + timestamps);
-    }
-    if(night != ""){
-         document.getElementById('night').checked = (night === 'true');
-        console.log("night      = " + night);
-    }
-    if(message != ""){
-        $("#message").val(message);
-        console.log("message    = " + message);
-    }
 }

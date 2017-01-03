@@ -91,9 +91,17 @@ status::after{
     color: rgb(85,85,85);
     content: "Server Not Checked";
 }
+.check::after{
+    color: rgb(85,85,85);
+    content: "Checking...";
+}
+.no::after{
+    color: rgb(170,85,85);
+    content: "Server Not Online, Check Your Server Adress";
+}
 .bad::after{
     color: rgb(170,0,0);
-    content: "Server Did Not Respond";
+    content: "Server Connection Horrible, Throw Out Your Router";
 }
 .slow::after{
     color: rgb(255,170,0);
@@ -152,9 +160,6 @@ input#timestamps, input#night{ display: none }
 
 #fortimestamps:after { content: "Off"}
 #timestamps:checked ~ #fortimestamps:after { content: "On"}
-
-#fornight:after { content: "Off"}
-#night:checked ~ #fornight:after { content: "On"}
 
 
 /*COLORS*/

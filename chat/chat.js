@@ -139,7 +139,6 @@ function loadCookies(){
     var timestamps = document.getCookie("timestamps");
     var message = document.getCookie("message");
     
-    if(log){
         console.log("=====Loaded Cookies");
         if(username != ""){
             $("#nameDisp").val(username);
@@ -165,6 +164,5 @@ function loadCookies(){
             $("#message").val(message);
             console.log("message    = " + message);
         }
-    }
     
 }

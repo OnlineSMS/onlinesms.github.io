@@ -58,7 +58,7 @@ $(window).bind('beforeunload', function(){
 $("#checkStatus").click(function() {
     $("status").removeClass();
     $("status").addClass("check");
-    var urll = "http://" + $("#server").val() + ":" + $("#port").val() + "/ping";
+    var urll = "https://" + $("#server").val() + ":" + $("#port").val() + "/ping";
 
     var ping = new Date().getTime();
 

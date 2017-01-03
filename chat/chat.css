@@ -91,25 +91,32 @@ status::after{
     color: rgb(85,85,85);
     content: "Server Not Checked";
 }
-.check::after{
+status.check::after{
     color: rgb(85,85,85);
     content: "Checking...";
 }
-.no::after{
+status.no::after{
     color: rgb(170,85,85);
     content: "Server Not Online, Check Your Server Adress";
 }
-.bad::after{
+status.bad::after{
     color: rgb(170,0,0);
     content: "Server Connection Horrible, Throw Out Your Router";
 }
-.slow::after{
+status.slow::after{
     color: rgb(255,170,0);
     content: "Server Connection Poor";
 }
-.good::after{
+status.good::after{
     color: rgb(0,170,0);
     content: "Server Connection Good";
+}
+
+/*NAME*/
+status::after{
+    display: inline-block;
+    color: rgb(85,85,85);
+    content: "Server Not Checked";
 }
 
 #checkStatus{

@@ -1,2 +1,3 @@
 # Jkeyll #
-*.lock
+Gemfile.lock
+Gemfile
